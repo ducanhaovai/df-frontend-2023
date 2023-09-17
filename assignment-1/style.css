@@ -1,4 +1,334 @@
-html {
-  height: 100%;
-  width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-weight: 500;
+  background-color: whitesmoke;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  height: 75px;
+  align-items: center;
+  gap: 372px;
+  flex-shrink: 0;
+}
+
+.containerUser {
+  position: relative;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: flex-end;
+  display: flex;
+}
+
+.nameUser {
+  padding: 10px;
+  width: 150px;
+}
+
+.container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 30px;
+}
+
+.imguser {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  flex-direction: row-reverse;
+  
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+button {
+  margin: 5px;
+}
+
+.searchadd {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.search {
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+  border-radius: 9px;
+}
+
+.last {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.navbar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.popup-add {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.add-bt {
+  display: flex;
+  padding: 8px 17px 9px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--primary-primary, #3B71FE);
+  color: var(--gray-6, #F4F5F6);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-content-add {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup-del {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 10;
+}
+
+.popup-title {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.popup-content-del {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.delete-bt {
+  display: flex;
+  padding: 8px 17px 9px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--primary-primary, #3B71FE);
+  color: var(--gray-6, #F4F5F6);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+/* Popup "Add Book" Overlay */
+.popup-add {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Popup "Add Book" Content */
+.popup-content-add {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Drop shadow */
+  text-align: center;
+}
+
+/* Close Button for Popup "Add Book" */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Style cho các input fields, labels và nút "Add" trong form */
+#addBookForm {
+  text-align: left;
+}
+
+#addBookForm label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#addBookForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#addBookForm input[type="submit"] {
+  background-color: #3B71FE;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* Popup "Delete Book" Overlay */
+.popup-del {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #000;
+  z-index: 10;
+}
+
+/* Popup "Delete Book" Title */
+.popup-title {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Popup "Delete Book" Content Text */
+.popup-content-del {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Popup "Delete Book" Buttons */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style cho nút "Delete" trong Popup "Delete Book" */
+#confirm-delete-button {
+  background-color: #FF0000; /* Màu đỏ */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Style cho nút "Cancel" trong Popup "Delete Book" */
+#cancel-delete-button {
+  background-color: #ccc; /* Màu xám */
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+

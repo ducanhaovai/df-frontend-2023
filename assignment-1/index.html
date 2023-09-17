@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Bookstore</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
 
-  <body>
-    Hello world
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bookstore</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="containerName">
+            <h2 class="nameStore">Bookstore</h2>
+        </div>
+        <div class="containerUser">
+            <img src="https://freesvg.org/img/abstract-user-flat-1.png" alt="user" class="imguser">
+            <a class="nameUser">DeepDarkFantasy</a>
+           
+
+        </div>
+
+    </div>
+
+    <div class="main">
+        <div class="searchadd">
+            <button onclick="openAddBookPopup()" class="add-bt">Add book</button>
+            <input class="search" id="search-book" type="text" placeholder="Search Book" oninput="searchBooks()">
+        </div>
+    </div>
+
+    <div id="bookForm" class="popup-add">
+        <div class="popup-content-add">
+            <span class="close" id="closeButton">&times;</span>
+            <h2>Add Book</h2>
+            <form id="addBookForm">
+                <label for="name">Name:</label>
+                <input type="text" id="addBookName" required><br>
+                <label for="author">Author:</label>
+                <input type="text" id="addBookAuthor" required><br>
+                <label for="topic">Topic:</label>
+                <input type="text" id="addBookTopic" required><br>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmationDialog" class="popup-add">
+        <div class="popup-content-add">
+            <h2>Confirmation</h2>
+            <p>Do you want to add this book?</p>
+            <button id="confirmButton">Yes</button>
+            <button id="cancelButton">No</button>
+        </div>
+    </div>
+
+    <table id="book-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Topic</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    
+
+    <div id="delete-popup" class="popup-del">
+        <div class="popup-title">Delete book</div>
+        <div class="popup-content-del">Do you want to delete Refactoring?</div>
+        <div class="popup-buttons">
+            <button id="cancel-delete-button" onclick="cancelDelete()">Cancel</button>
+            <button id="confirm-delete-button" onclick="confirmDelete()">Delete</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
